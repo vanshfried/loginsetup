@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power BI Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2vh;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      background-color: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 900px;
+    }
+
+    .left-panel {
+      flex: 1;
+      background-color: #008080c4;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .right-panel {
+      flex: 1;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .logo {
+      width: 100px;
+      max-width: 30%;
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .forgot-password {
+      font-size: 0.85rem;
+      text-align: right;
+      color: #555;
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-btn {
+      background-color: #00a78e;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 300px;
+      transition: background-color 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #008e7c;
+    }
+
+    /* Mobile layout */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+      }
+
+      .left-panel {
+        font-size: 1.5em;
+        padding: 1.5rem;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .right-panel {
+        padding: 1.5rem;
+        border-radius: 0 0 10px 10px;
+      }
+
+      .logo {
+        width: 80px;
+      }
+    }
+
+    /* Small phones */
+    @media (max-width: 480px) {
+      .form-group input {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+      }
+
+      .login-btn {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="left-panel">
+      Power BI Dashboard Login
+    </div>
+
+    <div class="right-panel">
+      <img src="head-logo.png" alt="GET Logo" class="logo" />
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="User Name">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Password">
+      </div>
+
+      <div class="forgot-password">Forgot Password?</div>
+
+      <button class="login-btn">LOGIN</button>
+    </div>
+  </div>
+
+</body>
+</html>
