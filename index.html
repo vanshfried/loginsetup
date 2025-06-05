@@ -4,16 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Power BI Login</title>
+
     <!-- Modern SVG favicon -->
     <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
-
     <!-- PNG fallbacks -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/images/apple-touch-icon96.png" />
-
     <!-- ICO fallback -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-
     <!-- Apple touch icon -->
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 
@@ -24,12 +22,11 @@
         padding: 0;
       }
 
-      body,
-      html {
+      html, body {
         font-family: Arial, sans-serif;
         background-color: #f0f2f5;
         height: 100%;
-        overflow: hidden; /* prevent double scrollbars */
+        overflow: hidden;
       }
 
       /* NAVBAR */
@@ -38,12 +35,12 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 56px; /* fixed navbar height */
+        height: 56px;
         background-color: #fff;
         border-bottom: 1px solid #ddd;
         display: flex;
         align-items: center;
-        justify-content: flex-start; /* logo on left */
+        justify-content: flex-start;
         padding: 0 2rem;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         z-index: 10;
@@ -53,15 +50,15 @@
         height: 40px;
       }
 
-      /* MAIN CONTENT AREA */
+      /* MAIN CONTENT */
       .main-content {
         position: fixed;
-        top: 56px; /* below navbar */
+        top: 56px;
         left: 0;
         right: 0;
-        bottom: 0;
-        overflow-y: auto; /* enable vertical scrolling */
-        padding: 20px 0; /* vertical padding */
+        bottom: 40px; /* leave space for footer */
+        overflow-y: auto;
+        padding: 20px 0;
         display: flex;
         justify-content: center;
         background-color: #f0f2f5;
@@ -75,8 +72,8 @@
         overflow: hidden;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         width: 90%;
-        max-width: 700px; /* reduced width */
-        min-height: 300px; /* minimum height */
+        max-width: 700px;
+        min-height: 300px;
       }
 
       .left-panel {
@@ -86,9 +83,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 1.5rem; /* reduced padding */
+        padding: 1.5rem;
         text-align: center;
-        font-size: 1.6em; /* reduced font size */
+        font-size: 1.6em;
         font-weight: bold;
       }
 
@@ -99,11 +96,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 1.5rem; /* reduced padding */
+        padding: 1.5rem;
       }
 
       .logo {
-        width: 80px; /* smaller logo */
+        width: 80px;
         max-width: 25%;
         margin-bottom: 1rem;
       }
@@ -154,17 +151,33 @@
         background-color: #008e7c;
       }
 
+      /* FOOTER */
+      .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        background-color: #ffffff;
+        border-top: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        color: #555;
+        z-index: 5;
+      }
+
       /* Responsive */
       @media (max-width: 768px) {
         .container {
           flex-direction: column;
           border-radius: 10px;
           width: 95%;
-          min-height: auto;
         }
 
         .left-panel {
-          font-size: 1.4em; /* smaller on tablets */
+          font-size: 1.4em;
           padding: 1rem;
           border-radius: 10px 10px 0 0;
         }
@@ -175,7 +188,7 @@
         }
 
         .logo {
-          width: 60px; /* smaller logo on mobile */
+          width: 60px;
         }
       }
 
@@ -187,6 +200,10 @@
 
         .login-btn {
           font-size: 0.95rem;
+        }
+
+        .footer {
+          font-size: 0.75rem;
         }
       }
     </style>
@@ -201,25 +218,25 @@
     <div class="main-content">
       <div class="container">
         <div class="left-panel">Power BI Dashboard Login</div>
-
         <div class="right-panel">
           <img src="head-logo.png" alt="GET Logo" class="logo" />
-
           <div class="form-group">
             <label for="email">Email</label>
             <input type="text" id="email" placeholder="User Name" />
           </div>
-
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" id="password" placeholder="Password" />
           </div>
-
           <div class="forgot-password">Forgot Password?</div>
-
           <button class="login-btn">LOGIN</button>
         </div>
       </div>
     </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      &copy; 2023 GET Global Group. All Rights Reserved.
+    </footer>
   </body>
 </html>
