@@ -4,8 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Power BI Login</title>
-    <link rel="icon" href="/logo.svg" type="image/svg+xml" />
-    <link rel="icon" href="/logo.png" sizes="32x32" type="image/png" />
+    <!-- Modern SVG favicon (best for sharp rendering) -->
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+
+    <!-- PNG fallback (for browsers that don’t like SVG) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
+
+    <!-- Optional: legacy fallback -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
     <style>
       * {
         box-sizing: border-box;
