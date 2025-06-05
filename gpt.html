@@ -4,18 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Power BI Login</title>
-    <!-- Modern SVG favicon -->
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
-
-    <!-- PNG fallbacks -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/apple-touch-icon96.png" />
-
-    <!-- ICO fallback -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-
-    <!-- Apple touch icon -->
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 
     <style>
       * {
@@ -24,59 +18,55 @@
         padding: 0;
       }
 
-      body,
-      html {
+      html, body {
         font-family: Arial, sans-serif;
         background-color: #f0f2f5;
         height: 100%;
-        overflow: hidden; /* prevent double scrollbars */
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
 
       /* NAVBAR */
       .navbar {
-        position: fixed;
+        position: sticky;
         top: 0;
-        left: 0;
-        right: 0;
-        height: 56px; /* fixed navbar height */
         background-color: #fff;
-        border-bottom: 1px solid #ddd;
+        height: 56px;
         display: flex;
         align-items: center;
-        justify-content: flex-start; /* logo on left */
         padding: 0 2rem;
+        border-bottom: 1px solid #ddd;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        z-index: 10;
+        z-index: 1000;
       }
 
       .nav-logo {
         height: 40px;
       }
 
-      /* MAIN CONTENT AREA */
+      /* MAIN */
       .main-content {
-        position: fixed;
-        top: 56px; /* below navbar */
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow-y: auto; /* enable vertical scrolling */
-        padding: 20px 0; /* vertical padding */
+        flex: 1;
         display: flex;
         justify-content: center;
-        background-color: #f0f2f5;
+        align-items: center;
+        padding: 2rem 1rem;
       }
 
       .container {
-        display: flex;
-        flex-direction: row;
         background-color: white;
         border-radius: 15px;
         overflow: hidden;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        width: 90%;
-        max-width: 700px; /* reduced width */
-        min-height: 300px; /* minimum height */
+        width: 100%;
+        max-width: 700px;
+        display: flex;
+        flex-direction: row;
+        min-height: 400px;
       }
 
       .left-panel {
@@ -84,11 +74,11 @@
         background-color: #008080c4;
         color: white;
         display: flex;
-        align-items: center;
         justify-content: center;
-        padding: 1.5rem; /* reduced padding */
+        align-items: center;
+        padding: 1.5rem;
         text-align: center;
-        font-size: 1.6em; /* reduced font size */
+        font-size: 1.5em;
         font-weight: bold;
       }
 
@@ -97,27 +87,26 @@
         background-color: #f9f9f9;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        padding: 1.5rem; /* reduced padding */
+        align-items: center;
+        padding: 2rem 1rem;
       }
 
       .logo {
-        width: 80px; /* smaller logo */
-        max-width: 25%;
+        width: 80px;
         margin-bottom: 1rem;
       }
 
       .form-group {
         width: 100%;
         max-width: 300px;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
       }
 
       .form-group label {
-        display: block;
-        margin-bottom: 6px;
         font-weight: bold;
+        margin-bottom: 0.5rem;
+        display: block;
       }
 
       .form-group input {
@@ -130,68 +119,71 @@
 
       .forgot-password {
         font-size: 0.85rem;
-        text-align: right;
         color: #555;
         width: 100%;
         max-width: 300px;
-        margin-bottom: 1.5rem;
+        text-align: right;
+        margin-bottom: 1rem;
       }
 
       .login-btn {
         background-color: #00a78e;
         color: white;
         padding: 10px 20px;
-        border: none;
         font-size: 1rem;
+        border: none;
         border-radius: 8px;
-        cursor: pointer;
         width: 100%;
         max-width: 300px;
-        transition: background-color 0.3s;
+        cursor: pointer;
       }
 
       .login-btn:hover {
         background-color: #008e7c;
       }
-      
 
-      /* Responsive */
+      /* FOOTER */
+      .footer {
+        background-color: #ffffff;
+        text-align: center;
+        padding: 10px 0;
+        border-top: 1px solid #ccc;
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      /* RESPONSIVE */
       @media (max-width: 768px) {
         .container {
           flex-direction: column;
-          border-radius: 10px;
-          width: 95%;
-          min-height: auto;
         }
 
         .left-panel {
-          font-size: 1.4em; /* smaller on tablets */
-          padding: 1rem;
+          font-size: 1.2em;
           border-radius: 10px 10px 0 0;
         }
 
         .right-panel {
           padding: 1rem;
-          border-radius: 0 0 10px 10px;
         }
 
         .logo {
-          width: 60px; /* smaller logo on mobile */
+          width: 60px;
         }
       }
 
-      @media (max-width: 480px) {
-        .form-group input {
-          font-size: 0.9rem;
-          padding: 0.75rem;
+      @media (max-height: 500px) {
+        .main-content {
+          align-items: flex-start;
         }
 
-        .login-btn {
-          font-size: 0.95rem;
+        .container {
+          min-height: auto;
         }
       }
     </style>
   </head>
+
   <body>
     <!-- NAVBAR -->
     <nav class="navbar">
@@ -202,27 +194,25 @@
     <div class="main-content">
       <div class="container">
         <div class="left-panel">Power BI Dashboard Login</div>
-
         <div class="right-panel">
           <img src="head-logo.png" alt="GET Logo" class="logo" />
-
           <div class="form-group">
             <label for="email">Email</label>
             <input type="text" id="email" placeholder="User Name" />
           </div>
-
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" id="password" placeholder="Password" />
           </div>
-
           <div class="forgot-password">Forgot Password?</div>
-
           <button class="login-btn">LOGIN</button>
         </div>
-
       </div>
     </div>
-   
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      &copy; 2025 GET Solutions. All rights reserved.
+    </footer>
   </body>
 </html>
